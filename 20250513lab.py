@@ -27,10 +27,9 @@ print("Question 3")
 
 def check_is_prime(number):
     check = lambda num: (number % num == 0)
-    if number > 1:
-        for i in range(2, number):
-            if check(i):
-                return False
+    for i in range(2, number):
+        if check(i):
+            return False
     return True
 
 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Show More
+    </title>
+</head>
+
+<body>
+    <div style="text-align:center">
+        <h3>Sample HTML</h3>
+    </div>
+    <p> Welcome to the "Show More Text Example".</p>
+    <a href="#" id="more" onclick="showText()"> Read more... </a>
+    <span id="text" style="display: none;"> Welcome to javascript and DOM.</span>
+
+    <script>
+        function showText() {
+            document.getElementById("text").style.display = "inherit"
+        }
+    </script>
+</body>
+
+</html>

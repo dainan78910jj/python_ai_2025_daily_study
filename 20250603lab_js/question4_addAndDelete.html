@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        List of Items
+    </title>
+</head>
+
+<body>
+    <div style="text-align:center">
+        <h3>Sample HTML</h3>
+    </div>
+    <h1> List of Items </h1>
+    <ul id="items">
+        <li>First <a href="#" onclick="deleteItem(this)">[Delete]</a></li>
+        <li>Second <a href="#" onclick="deleteItem(this)">[Delete]</a></li>
+    </ul>
+    <input type="text" id="newText" />
+    <input type="button" value="Add" onclick="addItem()" />
+
+    <script>
+        function addItem() {
+            /* 创建text node和element node，把文本节点放入元素节点*/
+            let dText = document.createTextNode("[Delete]");
+            let newA = document.createElement("a");
+            newA.appendChild(dText);
+
+            /*给元素节点添加属性*/
+            newA.setAttribute("href", "#");
+            newA.setAttribute("onclick", "deleteItem(this)");
+
+            /* 读取输入元素节点的值*/
+            let inputElement = document.getElementById("newText");
+            let newInputContent = inputElement.value;
+
+            /*创建一个新的li元素节点，然后放入输入元素节点的值*/
+            let newLi = document.createElement("li");
+            newLi.appendChild(document.createTextNode(newInputContent + " "));
+
+            /*把元素节点a添加到元素节点li里 ，li是父，a是子*/
+            newLi.appendChild(newA);
+
+            /*把元素节点li添加到元素节点ul里，ul是父，li是子*/
+            let parent = document.getElementById("items")
+            parent.appendChild(newLi);
+
+            /*最后清空输入框*/
+            inputElement.value = "";
+
+        }
+
+        function deleteItem(element) {
+            element.parentElement.remove()
+        }
+    </script>
+</body>
+
+</html>

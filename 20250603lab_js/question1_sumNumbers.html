@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Sum Numbers
+    </title>
+</head>
+
+<body>
+    <div style="text-align:center">
+        <h3>Sample HTML</h3>
+    </div>
+    <div style="margin-left:10px">
+        <input type="text" id="num1" /> +
+        <input type="text" id="num2" /> =
+        <input type="text" id="sum" readonly="readonly" />
+        <input type="button" value="Calc" onclick="calc()" />
+    </div>
+
+    <script>
+        function calc() {
+            let value1 = parseFloat(document.getElementById("num1").value);
+            let value2 = parseFloat(document.getElementById("num2").value);
+            document.getElementById("sum").value = value1 + value2;
+        }
+    </script>
+</body>
+
+</html>

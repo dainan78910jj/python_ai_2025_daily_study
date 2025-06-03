@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Collect List Items
+    </title>
+</head>
+
+<body>
+    <div style="text-align:center">
+        <h3>Sample HTML</h3>
+    </div>
+
+    <ul id="items">
+        <li>first item</li>
+        <li>second item</li>
+        <li>third item</li>
+    </ul>
+
+    <textarea id="result" style="height: 200px;"></textarea>
+    <br>
+
+    <button onclick="extractText()"> Extract Text </button>
+
+
+    <!-- <script>
+    option 1:
+        function extractText() {
+            let children = document.getElementById("items").childNodes
+            let text = ""
+            for (let i = 0; i < children.length; i++) {
+                if (children[i].innerHTML) {
+                    text += children[i].innerHTML + "\n"
+                }
+            }
+            document.getElementById("result").innerHTML = text.trim()
+        }
+    </script> -->
+
+    <script>
+        function extractText() {
+            let lis = document.getElementsByTagName("li");
+            let text = "";
+            for (let i = 0; i < lis.length; i++) {
+                text += lis[i].innerText + "\n";
+            }
+            document.getElementById("result").innerHTML = text.trim();
+        }
+    </script>
+
+</body>
+
+</html>

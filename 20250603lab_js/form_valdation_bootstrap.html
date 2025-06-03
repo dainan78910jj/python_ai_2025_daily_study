@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign-up using Bootstrap</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</head>
+
+<body>
+    <div class="container" style="max-width: 1200px; margin: 50px auto auto auto;">
+        <form id="my_form">
+            <div class="form-group">
+                <label for="fname">Firstname</label>
+                <input type="text" class="form-control" id="fname" name="firstname" placeholder="Firstname">
+            </div>
+            <div class="form-group">
+                <label for="lname">Lastname</label>
+                <input type="text" class="form-control" id="lname" name="lastname" placeholder="Lastname">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="Email" class="form-control" id="email" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password</label>
+                <input type="password" class="form-control" id="pwd" name="password" placeholder="Password">
+            </div>
+
+            <input type="submit" />
+        </form>
+    </div>
+
+    <script>
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const formProps = Object.fromEntries(formData);
+
+            alert(JSON.stringify(formProps));
+        }
+
+        const formElement = document.getElementById("my_form");
+        formElement.addEventListener("submit", handleSubmit);
+
+        /*
+        // jQuery way
+        $("#my_form").submit(handleSubmit);
+        */
+    </script>
+</body>
+
+</html>

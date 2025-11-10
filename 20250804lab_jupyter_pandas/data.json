@@ -1,0 +1,44 @@
+
+[
+    {
+      "user": "User1",
+      "age": 25,
+      "height_cm": 175,
+      "weight_kg": 70,
+      "purchases": [1, 0, 2, null],
+      "income": 40000
+    },
+    {
+      "user": "User2",
+      "age": null,
+      "height_cm": 160,
+      "weight_kg": null,
+      "purchases": [0, 1, null, 3],
+      "income": 25000
+    },
+    {
+      "user": "User3",
+      "age": 35,
+      "height_cm": null,
+      "weight_kg": 85,
+      "purchases": [null, 2, 1, 0],
+      "income": 70000
+    },
+    {
+      "user": "User4",
+      "age": 50,
+      "height_cm": 180,
+      "weight_kg": 95,
+      "purchases": [3, null, 2, 1],
+      "income": 50000
+    },
+    {
+      "user": "User5",
+      "age": 150,
+      "height_cm": 170,
+      "weight_kg": 200,
+      "purchases": [2, 1, 0, 3],
+      "income": 120000
+    }
+  ]
+  

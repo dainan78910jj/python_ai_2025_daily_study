@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+
+\geometry{a4paper, margin=1in}
+
+\title{Titanic Passenger Survival Prediction Project Summary Report}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Project Overview}
+
+This project aims to analyze the Titanic passenger dataset and build a predictive model to forecast passenger survival. Through in-depth analysis of the dataset and feature engineering, various visualization methods were attempted, and a basic machine learning model was constructed.
+
+\section{Data Analysis and Processing}
+
+\subsection{Dataset Inspection}
+The training set contains 891 records with 12 columns, with data types mainly including integers, strings, and floating-point numbers. The test set contains 418 records with 11 columns, missing the survival status column.
+
+\subsection{Missing Value Handling}
+Missing values in the dataset are mainly concentrated in the following three columns:
+\begin{itemize}
+    \item Age column: 177 records missing
+    \item Embarked column: 2 records missing
+    \item Cabin column: 687 records missing
+\end{itemize}
+
+For the missing values in the Embarked column, by analyzing ticket numbers and fare information, it was inferred that the port of embarkation for the missing records is most likely port S.
+
+For the missing values in the Age column, the following strategies were adopted for imputation:
+\begin{itemize}
+    \item For passengers sharing ticket numbers with others, if the age information of other fellow passengers is complete, the average age of fellow passengers was used for imputation
+    \item For solo travelers with missing age information, by analyzing the age information of passengers with nearby ticket numbers or cabin numbers, the average age of similar passengers was used for imputation
+\end{itemize}
+
+Due to the excessive amount of missing information in the Cabin column (approximately 77\% of the total data), this column lacks practical analytical value and was therefore not processed.
+
+\subsection{Feature Engineering}
+The design direction of this project is to predict survival or death by statistically analyzing the frequency of letters in passenger names. Therefore, feature engineering primarily focused on processing the Name column. By splitting the Name column, two new features were added:
+\begin{itemize}
+    \item Title: Title information extracted from names
+    \item Freq: Frequency of letters appearing in names
+\end{itemize}
+
+\section{Data Visualization Analysis}
+
+This project used various visualization methods to analyze the data:
+\begin{itemize}
+    \item Bar charts were used to analyze the survival and death situations of males and females
+    \item Scatter plots were used to analyze the survival situations of males and females under different cabin classes based on age and name length
+    \item Heatmaps were used to analyze the proportion of 26 letters appearing in all passenger names
+\end{itemize}
+
+\section{Model Construction and Evaluation}
+
+A basic K-Nearest Neighbors (KNN) model was constructed for survival prediction. The model's prediction accuracy was over 60\%.
+
+However, in-depth analysis of the model output revealed that the model's predicted probability of not being rescued was around 60\%, and the probability of being rescued was around 40\%. After taking the maximum value, the model predicted that all passengers were not rescued, so the accuracy rate was actually equal to the proportion of non-rescued passengers in the dataset.
+
+This indicates that the proposed algorithm did not discover effective patterns in the data, and the model failed to learn meaningful patterns, leading to training failure.
+
+\section{Conclusion and Future Work}
+
+Through the analysis and modeling of Titanic passenger data, this project achieved a superficial prediction accuracy of over 60\%, but in reality, the model did not learn effective prediction patterns. Future improvements can be made in the following aspects:
+
+\begin{itemize}
+    \item Introduce more effective feature engineering methods
+    \item Try other more suitable machine learning algorithms
+    \item Conduct more in-depth data exploration and analysis
+    \item Optimize model parameters and structure
+\end{itemize}
+
+\end{document}

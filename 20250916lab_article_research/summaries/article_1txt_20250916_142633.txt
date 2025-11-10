@@ -1,0 +1,5 @@
+Here are three bullet points summarizing the article in brief sentences:
+
+• US Health officials, including the Secretary to Robert F. Kennedy Jr., are analyzing datasets on Covid-19 vaccine safety risks for pregnant women and children.
+• Data used for these analyses is primarily from the Vaccine Adverse Event Reporting System (VAERS), which some experts argue may not be suitable for proving causation due to its low threshold for reporting events.
+• The FDA and CDC staff have also prepared presentations to be discussed by the Advisory Committee on Immunization Practices, which includes a potential narrowing of age recommendations for Covid-19 vaccines, with consideration for an upper age limit of 75.
